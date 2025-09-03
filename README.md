@@ -1,2 +1,2 @@
-# wom25-exempel
-Webbtjänster och molnteknologi - lektionsexempel 
+# Webbtjänster och molnteknologi - lektionsexempel 
+Varje lektion sparas som skild branch.
