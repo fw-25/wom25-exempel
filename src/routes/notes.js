@@ -11,7 +11,7 @@ const tempData = [
 ]
 
 router.get('/', async (req, res) => {
-        try {
+    try {
         const notes = await prisma.note.findMany({
             where: { author_id: 1 }
         })
@@ -22,11 +22,23 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', (req, res) => {
-    console.log("POST")
+router.post('/', async (req, res) => {
 
-    // simulering av SQL INSERT INTO....
-    tempData.push(req.body)
+    try {
+        const newNote = await prisma.note.create({
+            data: {
+                author_id: 1,
+                note: req.body.text
+            }
+        })  
+
+        res.json({msg: "New note created", id: newNote.id})
+
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({msg: "Error: POST failed"})
+    }
+
 
     res.send({ 
         method: req.method, 

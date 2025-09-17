@@ -6,7 +6,7 @@ GET {{apiURL}}
 POST {{apiURL}}
 Content-Type: application/json
 
-{ "text": "hello!" }
+{ "text": "testing POST" }
 
 ###
 PUT {{apiURL}}/1
