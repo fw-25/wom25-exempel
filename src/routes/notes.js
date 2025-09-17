@@ -4,12 +4,6 @@ const { PrismaClient } = require('@prisma/client')
 const router = express.Router()
 const prisma = new PrismaClient()
 
-// ersätts senare med riktig data från DB
-const tempData = [
-    { text: "hej" },
-    { text: "morjens"}
-]
-
 router.get('/', async (req, res) => {
     try {
         const notes = await prisma.note.findMany({
