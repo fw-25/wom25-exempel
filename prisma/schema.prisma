@@ -18,6 +18,16 @@ model Note {
   @@map("notes") // mappar prisma-obj Note till tabellen "notes"
 }
 
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  email     String   @unique
+  role      String   @default("user")
+  name      String?
+  password  String?
+}
+
 model Test {
   id    Int    @id @default(autoincrement())
   name  String

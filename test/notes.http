@@ -1,8 +1,9 @@
 @apiURL = http://localhost:8080/notes
 # JWT John Doe:
 #@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.ByTWqusGaa5rZDNjlYcV2BO--6q6oebGXF84fPlFSEc
-# JWT Jane Doe:
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsIm5hbWUiOiJKYW5lIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.uInxwnCNXsBYITWofpPwFCUnYvSAl69iMrNLrQhawTo
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9obi5kb2VAYXJjYWRhLmZpIiwibmFtZSI6bnVsbCwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTg1MjkxMzgsImV4cCI6MTc2MTEyMTEzOH0.jqwEdrDwYCBivt_UUUWu8MLDG_UAtWPUx68V0Zh7m4E
+
 ### 
 
 GET {{apiURL}}
