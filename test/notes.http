@@ -1,12 +1,19 @@
 @apiURL = http://localhost:8080/notes
+# JWT John Doe:
+#@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsIm5hbWUiOiJKb2huIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.ByTWqusGaa5rZDNjlYcV2BO--6q6oebGXF84fPlFSEc
+# JWT Jane Doe:
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsIm5hbWUiOiJKYW5lIERvZSIsImlhdCI6MTUxNjIzOTAyMn0.uInxwnCNXsBYITWofpPwFCUnYvSAl69iMrNLrQhawTo
+### 
 
 GET {{apiURL}}
+Authorization: Bearer {{token}}
 
 ###
 POST {{apiURL}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
-{ "text": "testing POST" }
+{ "author_id": 2, "text": "testing POST" }
 
 ###
 PUT {{apiURL}}/1

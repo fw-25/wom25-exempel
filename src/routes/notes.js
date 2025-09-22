@@ -1,13 +1,16 @@
 const express = require('express')
 const { PrismaClient } = require('@prisma/client')
+const authorize = require('../middleware/authorize')
 
 const router = express.Router()
 const prisma = new PrismaClient()
 
+router.use(authorize)
+
 router.get('/', async (req, res) => {
     try {
         const notes = await prisma.note.findMany({
-            where: { author_id: 1 }
+            where: { author_id: req.authUser.sub } 
         })
         res.json(notes)
     } catch (error) {
@@ -21,7 +24,7 @@ router.post('/', async (req, res) => {
     try {
         const newNote = await prisma.note.create({
             data: {
-                author_id: 1,
+                author_id: req.body.author_id,
                 note: req.body.text
             }
         })  
