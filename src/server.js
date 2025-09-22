@@ -1,7 +1,12 @@
 const express = require('express')
+const cors = require('cors')
+
+
 require('dotenv').config()
 
 const app = express()
+app.use(cors()) // tillåt requests från alla origins
+
 const PORT = process.env.PORT || 8080
 
 console.log(`Node.js ${process.version}`)
