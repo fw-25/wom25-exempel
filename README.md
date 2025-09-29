@@ -1,15 +1,17 @@
-# rahti2 node.js
+# WebSocket-demo
 
-### For deployment to Rahti2
+A silly (but working) WebSocket demo by Fredrik Welander.
 
-Note: OpenShift wants the main branch to be named *master* by default, you have two options:
-1. Push to origin/master to deploy
-2. Change the setting in Openshift to *main*:    
-    Edit BuildConfig ==> Show advanced git options ==> Git reference: `main`
+## Start server:
+- clone the repo
+- create `ws-node/.env` (see .env-example)
+- `cd ws-node`
+- `npm i`
+- `npm run dev`
 
-### For local real-time development
+## Start client:
+- Open `ws-frontend`in VSCode
+- Run with Live Server extension
+- Use the hard coded example token (`my-secret-token`) or set your own token in the Developer Console:    
+    `localStorage.setItem('ws_token', 'my-very-secret-token')`
 
-Rename `.env-example` to `.env` to override the `MODE=production`set in the `Dockerfile`. Note that this needs a valueless declaration of `MODE` in `docker-compose.yml`
-
-To run the container locally:
-`docker-compose up --build`
