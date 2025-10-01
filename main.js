@@ -36,13 +36,13 @@ ipcMain.handle('send-stuff-to-main', async (event, data) => console.log(data))
 
 // "databas"
 const products = [
-  { name: "hat", price: 25.9 },
-  { name: "shirt", price: 60 },
-  { name: "shoes", price: 120 }
+  { id: 1, name: "hat", price: 25.9 },
+  { id: 2, name: "shirt", price: 60 },
+  { id: 3, name: "shoes", price: 120 }
 ]
 
 ipcMain.handle('get-products', () => products)
-ipcMain.handle('get-product-info', async (event, id) => products[id])
+ipcMain.handle('get-product-info', async (event, id) => products[id-1])
 
 app.on('window-all-closed', function () {
   app.quit()

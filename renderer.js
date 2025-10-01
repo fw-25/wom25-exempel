@@ -14,7 +14,7 @@ function listProducts(products) {
 
 async function getProduct(id) {
     product = await window.exposed.getProductInfo(id)
-    console.log(product)
+    document.getElementById('product-info').innerHTML = `${product.name} ${product.price}`
 }
 
 (async() => {
@@ -28,4 +28,8 @@ async function getProduct(id) {
     // hämta produkterna från main via preload
     listProducts(await window.exposed.getProducts())
 })()
+
+document.getElementById('products').addEventListener('click', (e) => {
+    getProduct(e.target.id.split('-')[1])
+})
 
